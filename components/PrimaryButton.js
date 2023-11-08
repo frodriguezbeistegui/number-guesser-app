@@ -2,7 +2,6 @@ import { useId } from 'react'
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 
 function PrimaryButton ({ children, onPress = ()=>{} }) {
-
     function handlePress () {
        onPress()
     }
