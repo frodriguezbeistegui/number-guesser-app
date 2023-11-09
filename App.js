@@ -9,15 +9,9 @@ export default function App() {
 
   const startGameHandler = (pickedNumber) => {
     setUserNumber(pickedNumber)
-
   }
 
-  let screen = <StartGameScreen onPickNumber={startGameHandler} />;
-
-  if(userNumber){
-    screen = <GameScreen />
-  }
-
+  const screen = userNumber ? <GameScreen /> : <StartGameScreen onPickNumber={startGameHandler} /> ;
 
   return (
       <>
