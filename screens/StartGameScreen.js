@@ -2,6 +2,7 @@ import { TextInput, View, StyleSheet, Alert } from 'react-native'
 import { useState } from 'react'
 import { PrimaryButton } from '../components'
 
+
 function StartGameScreen ({ onPickNumber }) {
     const [ enteredNumber, setEnteredNumber ] = useState('')
 

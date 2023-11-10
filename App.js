@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ImageBackground, StyleSheet } from 'react-native';
 import { GameScreen, StartGameScreen } from './screens';
 import { LinearGradient } from 'expo-linear-gradient'
+import { SafeAreaView } from "react-native-safe-area-context"
 import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
               resizeMode='cover'
               imageStyle={styles.backgroundImage}
             >
+           <SafeAreaView />
            {screen}
           </ImageBackground>
         </LinearGradient>
