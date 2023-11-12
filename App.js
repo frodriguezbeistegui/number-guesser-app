@@ -4,6 +4,7 @@ import { GameScreen, StartGameScreen } from './screens';
 import { LinearGradient } from 'expo-linear-gradient'
 import { SafeAreaView } from "react-native-safe-area-context"
 import { StatusBar } from 'expo-status-bar';
+import Colors from './constants/colors';
 
 export default function App() {
   const [ userNumber, setUserNumber ] = useState(null)
@@ -19,7 +20,7 @@ export default function App() {
         <StatusBar style={'light'} />
           <LinearGradient 
             style={ styles.rootScreen }  
-            colors={[ '#3b021f', '#cca938']}
+            colors={[ Colors.primary700, Colors.accent500]}
           >
             <ImageBackground 
               source={require('./assets/images/background.png')} 
