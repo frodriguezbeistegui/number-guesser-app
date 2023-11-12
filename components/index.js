@@ -1,2 +1,2 @@
-export { default as PrimaryButton } from './PrimaryButton'
-export { default as Title } from './Title'
+export { default as PrimaryButton } from './ui/PrimaryButton'
+export { default as Title } from './ui/Title'

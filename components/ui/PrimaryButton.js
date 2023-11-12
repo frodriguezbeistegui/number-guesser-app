@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native'
-import Colors from '../constants/colors'
+import Colors from '../../constants/colors'
 
 function PrimaryButton ({ children, onPress = ()=>{} }) {
     function handlePress () {
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         elevation: 2,
     },
     buttonText: {
-        color: '#ffffff',
+    color: '#ffffff',
         textAlign: 'center'
     },
     pressed: {
