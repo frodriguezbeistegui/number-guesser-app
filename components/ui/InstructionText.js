@@ -1,8 +1,8 @@
 import { Text, StyleSheet } from 'react-native'
 import Colors from '../../constants/colors'
 
-function IntructionText ({ children }) {
-    return <Text style={styles.intructionText} >{ children }</Text>
+function IntructionText ({ children, style }) {
+    return <Text style={[styles.intructionText, style]} >{ children }</Text>
 }
 
 const styles = StyleSheet.create({

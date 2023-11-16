@@ -5,10 +5,21 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { SafeAreaView } from "react-native-safe-area-context"
 import { StatusBar } from 'expo-status-bar';
 import Colors from './constants/colors';
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 export default function App() {
   const [ userNumber, setUserNumber ] = useState(null)
   const [ gameIsOver, setGameIsOver ] = useState(true)
+  
+  const [ fontsloaded ] = useFonts({
+    'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+    'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf')
+  })
+
+  if(!fontsloaded){
+    return <AppLoading />
+  }
 
   const startGameHandler = (pickedNumber) => {
     setUserNumber(pickedNumber)

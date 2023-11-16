@@ -3,6 +3,7 @@ import { View, StyleSheet, Alert} from "react-native"
 import { Card, PrimaryButton, Title, InstructionText} from "../../components"
 import { generateRandomBetween } from "./utils"
 import NumberContainer from "../../components/game/NumberContainer"
+import { Ionicons } from '@expo/vector-icons';
 
 let minBoundary = 1
 let maxBoundary = 100
@@ -55,10 +56,18 @@ function GameScreen({ userNumber, onGameOver }) {
             <Title>Opponennt's Gess</Title>
             <NumberContainer>{currentGuess}</NumberContainer>
             <Card>
-                <InstructionText>Higher or Lower?</InstructionText>
-                <View style={styles.butttonsContainer}>
-                    <PrimaryButton onPress={() => nextGuessHanlder('higher')}>+</PrimaryButton>
-                    <PrimaryButton onPress={() => nextGuessHanlder('lower')}>-</PrimaryButton>
+                <InstructionText style={styles.instructionText} >Higher or Lower?</InstructionText>
+                <View style={styles.buttonsContainer}>
+                    <View style={styles.buttonContainer} >
+                        <PrimaryButton onPress={() => nextGuessHanlder('higher')}>
+                            <Ionicons name="md-add" size={24} color='white'/>
+                        </PrimaryButton>
+                    </View>
+                    <View style={styles.buttonContainer} >
+                        <PrimaryButton onPress={() => nextGuessHanlder('lower')}>
+                            <Ionicons name="md-remove" size={24} color='white'/>
+                        </PrimaryButton>
+                    </View>
                 </View>
                
             </Card>
@@ -75,6 +84,15 @@ const styles = StyleSheet.create({
         padding: 12,
         marginTop: 50
     },
+    instructionText: {
+        marginBottom: 12,
+    },
+    buttonsContainer: {
+        flexDirection: 'row'
+    },
+    buttonContainer: {
+        flex: 1,
+    }
 })
 
 export default GameScreen
