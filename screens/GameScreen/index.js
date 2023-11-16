@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react"
-import { Text, View, StyleSheet, Alert} from "react-native"
-import { PrimaryButton, Title } from "../../components"
+import { View, StyleSheet, Alert} from "react-native"
+import { Card, PrimaryButton, Title, InstructionText} from "../../components"
 import { generateRandomBetween } from "./utils"
 import NumberContainer from "../../components/game/NumberContainer"
 
@@ -54,14 +54,14 @@ function GameScreen({ userNumber, onGameOver }) {
         <View style={styles.screen}>
             <Title>Opponennt's Gess</Title>
             <NumberContainer>{currentGuess}</NumberContainer>
-            <View>
-                <Text>Higher or Lower?</Text>
+            <Card>
+                <InstructionText>Higher or Lower?</InstructionText>
                 <View style={styles.butttonsContainer}>
                     <PrimaryButton onPress={() => nextGuessHanlder('higher')}>+</PrimaryButton>
                     <PrimaryButton onPress={() => nextGuessHanlder('lower')}>-</PrimaryButton>
                 </View>
                
-            </View>
+            </Card>
             <View>
                
             </View>
